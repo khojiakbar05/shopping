@@ -1,0 +1,19 @@
+SHELL COMMAND
+cd, cd /, cd .., cd ~, pwd, ls -la, mkdir, touch, rm -rf name, nano, vim, cat
+
+
+PACKAGE manager in every stack have:
+Node.Js  =>  npm
+Python   =>  pip pipenv
+MacOs    =>  brew 
+
+
+
+
+
+
+
+
+
+
+
