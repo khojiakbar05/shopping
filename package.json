@@ -2,9 +2,9 @@
   "name": "shopping",
   "version": "1.0.0",
   "description": "this is testing app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "advice": "nodemon advice.js",
     "suggest": "nodemon suggest.js",
@@ -13,6 +13,7 @@
   "author": "Khoji",
   "license": "ISC",
   "dependencies": {
+    "express": "^5.2.1",
     "moment": "^2.30.1"
   }
 }
