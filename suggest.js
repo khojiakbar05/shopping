@@ -54,7 +54,6 @@ function suggest(age) {
 };
 
 
-
 // then/catch
 // call
 suggest(45). then(data => {
