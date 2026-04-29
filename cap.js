@@ -6,7 +6,7 @@
 
       define       =>     call
     Callback            function
-    asynch/await        then/catch
+    asynch/await        then/catch, asynch/await
     promise             then/catch
 
 */
@@ -25,27 +25,27 @@ function division(a, b, callback) {
   }
   
   // Promise hell
-  division1(10, 3).then(data => {
-    console.log("Result: ", data)
-    console.log("......")
+//   division1(10, 3).then(data => {
+//     console.log("Result: ", data)
+//     console.log("......")
 
-    division1(10, 4).then(data => {
-        console.log("Result: ", data)
-        console.log("......")
+//     division1(10, 4).then(data => {
+//         console.log("Result: ", data)
+//         console.log("......")
 
-        division1(20, 7).then(data => {
-            console.log("Result: ", data)
-            console.log("......")
+//         division1(20, 7).then(data => {
+//             console.log("Result: ", data)
+//             console.log("......")
 
-        }).catch(err => {
-            console.log("Error division: ", err)
-        })
-    }).catch(err => {
-        console.log("Error division: ", err)
-    })
-}).catch(err => {
-    console.log("Error division: ", err)
-})
+//         }).catch(err => {
+//             console.log("Error division: ", err)
+//         })
+//     }).catch(err => {
+//         console.log("Error division: ", err)
+//     })
+// }).catch(err => {
+//     console.log("Error division: ", err)
+// })
 
 
   // call  / setTimeOut
@@ -120,3 +120,32 @@ division1(10, 3).then(data => {
 }).catch(err => {
     console.log("Error division: ", err)
 })
+
+
+
+// Async / await functionda hellni handle qilish
+async function division(a, b) {
+    if(b == 0) {
+        throw new Error("Not divided by zero!");
+    } else {
+        return a % b
+    }
+}
+
+
+
+
+
+async function run(){
+    let result = await division(10, 3);
+    console.log("result one: ", result);
+
+    result = await division(10, 4);
+    console.log("result one: ", result);
+
+    result = await division(20, 7);
+    console.log("result one: ", result);
+
+}
+
+run();
