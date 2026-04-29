@@ -2,7 +2,7 @@
 
 
 /*   Asynchronous function:  
-3ga bolinadi :   Callback    &     Asynch   &   Promise
+3ga bolinadi :   Callback    &     Async   &   Promise
 
       define       =>     call
     Callback            function
@@ -24,20 +24,44 @@ function division(a, b, callback) {
     }
   }
   
-  // call  / setTimeOut
-  console.log("Passed here A")
+  // Promise hell
+  division1(10, 3).then(data => {
+    console.log("Result: ", data)
+    console.log("......")
 
-  const result = division(4, 3, (err, data) => {
-     if(err) console.log("ERROR: ", err);
-     else { 
-        setTimeout(function() {
-            console.log("Passed here B")
-            console.log("RESULT: ", data);
-            console.log("...");
-        }, 5000)
-     }
-  });
-  console.log("Passed here C")
+    division1(10, 4).then(data => {
+        console.log("Result: ", data)
+        console.log("......")
+
+        division1(20, 7).then(data => {
+            console.log("Result: ", data)
+            console.log("......")
+
+        }).catch(err => {
+            console.log("Error division: ", err)
+        })
+    }).catch(err => {
+        console.log("Error division: ", err)
+    })
+}).catch(err => {
+    console.log("Error division: ", err)
+})
+
+
+  // call  / setTimeOut
+//   console.log("Passed here A")
+
+//   const result = division(4, 3, (err, data) => {
+//      if(err) console.log("ERROR: ", err);
+//      else { 
+//         setTimeout(function() {
+//             console.log("Passed here B")
+//             console.log("RESULT: ", data);
+//             console.log("...");
+//         }, 5000)
+//      }
+//   });
+//   console.log("Passed here C")
 
 // setInterval
 //   const result = division(4, 3, (err, data) => {
@@ -88,11 +112,11 @@ function division1(c, d) {
         }
     })
 }
-
+ 
 // call then/catch
 division1(10, 3).then(data => {
     console.log("Result: ", data)
     console.log("......")
 }).catch(err => {
     console.log("Error division: ", err)
-});
+})
